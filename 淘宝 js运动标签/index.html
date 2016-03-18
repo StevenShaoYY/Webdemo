@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<meta charset=utf-8>
+<meta name=description content="TaoBao js move tab">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<head>
+	<title>淘宝标签</title>
+	<script src="js/move.js"></script>
+	<script>
+		window.onload = function () {
+			var aMove = document.getElementById('move');
+			var alist = aMove.getElementsByTagName('a');
+			alist[0].onmouseover = function(){
+					var _this = this.getElementsByTagName('i')[0];
+					startMove(_this,{"top":"-45","opacity":"0"},15,function(){
+						_this.style.top = 30+'px';
+						startMove(_this,{top:0,opacity:100}),15
+					});
+				}
+			for (var i = 1; i < alist.length; i++) {
+				alist[i].onmouseover = function(){
+					var _this = this.getElementsByTagName('i')[0];
+					startMove(_this,{"top":"-25","opacity":"0"},15,function(){
+						_this.style.top = 20+'px';
+						startMove(_this,{top:0,opacity:100},15)
+					});
+				}
+			}
+
+		}
+	</script>
+	<style type="text/css">
+	#move{
+		margin:100px;
+		height:220px;
+		width:390px;
+		position:relative;
+	}
+	#move a{
+		display: inline-block;
+		width: 73px;
+		height: 92px;
+		border: 2px solid #ddd;
+		border-radius:3px;
+		background-color:#fff;
+		text-align:center;
+		margin:-1px;
+		position:relative;	
+		float:left;
+		color:#9c9c9c;
+		font-size:12px;
+		text-decoration: none;
+		line-height:25px;
+		overflow:hidden;
+
+	}
+	#move .picture1{
+		display: inline-block;
+		width: 135px;
+		height: 186px;
+		border: 2px solid #ddd;
+		border-radius:3px;
+		background-color:#fff;
+		text-align:center;
+		margin:-1px;
+		position:relative;
+		float:left;
+		color:#9c9c9c;
+		font-size:12px;
+		text-decoration: none;
+		line-height:25px;
+		overflow:hidden;
+	}
+	#move a i{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		filter: alpha(opacity = 100);
+		opacity: 1;
+	}
+	#move a:hover{
+		color: #F00;
+	}
+	#move img{
+		border: none;
+		width:73px;
+		height:62px;
+	}
+	#move .pic1{
+		border: none;
+		width:135px;
+		height:127px;
+	}
+	#move .picture1 p{
+		padding-top:130px;
+	}
+	#move p{
+		padding-top:50px;
+	}
+	</style>
+	
+</head>
+<body>
+<div id="move">
+	<a class="picture1" href="#"><i><img class="pic1" src="sourse/image/1.png" /></i><p>冲话费</p></a>
+	<a href="#"><i><img src="sourse/image/2.png" /></i><p>游戏</p></a>
+	<a href="#"><i><img src="sourse/image/3.png" /></i><p>旅行</p></a>
+	<a href="#"><i><img src="sourse/image/4.png" /></i><p>保险</p></a>
+	<a href="#"><i><img src="sourse/image/5.png" /></i><p>彩票</p></a>
+	<a href="#"><i><img src="sourse/image/6.png" /></i><p>电影</p></a>
+	<a href="#"><i><img src="sourse/image/7.png" /></i><p>点外卖</p></a>
+</div>
+</body>
+</html>
